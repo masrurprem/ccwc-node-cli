@@ -1,0 +1,19 @@
+{
+  "name": "ccwc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "bin": {
+    "ccwc": "index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "word-count": "^0.3.1"
+  }
+}
