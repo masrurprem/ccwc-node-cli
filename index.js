@@ -16,10 +16,10 @@ async function main() {
   //console.log(options.length);
   //return;
   let filePathArgument = "";
-  let option = "";
-  if (options.length > 0) {
-    option = options[0];
-  }
+  //   let option = "";
+  //   if (options.length > 0) {
+  //     option = options[0];
+  //   }
 
   if (args.length > 0) {
     filePathArgument = args[0];
@@ -54,16 +54,34 @@ async function main() {
   }
 
   //
-  if (option === "-l" || option === "--line") {
-    console.log(lines, filePathArgument);
-  } else if (option === "-w") {
-    console.log(words, filePathArgument);
-  } else if (option === "-c") {
-    console.log(bytes, filePathArgument);
-  } else if (option === "-m") {
-    console.log(chars, filePathArgument);
-  } else if (option === "") {
+  //   if (option === "-l" || option === "--line") {
+  //     console.log(lines, filePathArgument);
+  //   } else if (option === "-w") {
+  //     console.log(words, filePathArgument);
+  //   } else if (option === "-c") {
+  //     console.log(bytes, filePathArgument);
+  //   } else if (option === "-m") {
+  //     console.log(chars, filePathArgument);
+  //   } else if (option === "") {
+  //     console.log(lines, words, bytes, filePathArgument);
+  //   }
+  let result = "";
+  if (options.length === 0) {
     console.log(lines, words, bytes, filePathArgument);
+    return;
   }
+
+  for (let option of options) {
+    if (option === "-l" || option === "--line") {
+      result += lines + " ";
+    } else if (option === "-c") {
+      result += bytes + " ";
+    } else if (option === "-w") {
+      result += words + " ";
+    } else if (option === "-m") {
+      result += chars + " ";
+    }
+  }
+  console.log(result + filePathArgument);
 }
 main();
